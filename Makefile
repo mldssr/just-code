@@ -2,15 +2,15 @@ BUILD := $(PWD)/build/
 CXX ?= g++
 
 CFLAGS := -O3 -Wall -std=c++11
-INCLUDE := $(shell pkg-config --cflags glib-2.0 openssl zlib)
-LIBFLAGS := $(shell pkg-config --libs glib-2.0 openssl zlib)
+#INCLUDE := $(shell pkg-config --cflags glib-2.0 openssl zlib)
+#LIBFLAGS := $(shell pkg-config --libs glib-2.0 openssl zlib)
 
 # searching directory for .cpp and .h files.
-VPATH := src:test
+VPATH := src:test:acm:algorithm
 INCLUDE += -Isrc
-LIBFLAGS += -pthread
+#LIBFLAGS += -pthread
 
-AFILES := test++.cpp \
+AFILES := test.cpp \
           sort.cpp
 
 AOBJS := $(addprefix $(BUILD),$(subst .cpp,.o,$(AFILES)))
@@ -25,14 +25,14 @@ $(AOBJS): $(BUILD)%.o : %.cpp
 $(APPS): % : %.o
 	$(CXX) $^ -o $@ $(LIBFLAGS)
 
-.PHONY: $(basename $(TFILES))
+.PHONY: $(basename $(AFILES))
 
-test++: $(BUILD)test++
-	$(BUILD)test++
+test: $(BUILD)test
+	$(BUILD)test
 
 sort: $(BUILD)sort
 	$(BUILD)sort
 
 .PHONY: clean
 clean:
-	@rm -rf $(BUILD)*
+	rm -f $(BUILD)*

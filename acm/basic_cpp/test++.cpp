@@ -13,7 +13,8 @@ char *strcpy(char *strDest, const char *strSrc) {
     assert((strDest != NULL) && (strSrc != NULL));
     char *address = strDest;
     while ((*strDest++ = *strSrc++) != '\0') {
-        printf("=== %c === %02X === %c === %02X\n", *strSrc, *strSrc, *strDest, *strDest);
+        printf("=== %c === %02X === %c === %02X\n", *strSrc, *strSrc, *strDest,
+                *strDest);
     }
     return address;
 }

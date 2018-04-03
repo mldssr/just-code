@@ -96,8 +96,8 @@ void InsertionSort(int arr[], int num) {
 /****************************************************************************/
 
 /*希尔排序:先将整个待排元素序列分割成若干子序列（由相隔某个“增量”的元素组成的）分别进行
-  直接插入排序，然后依次缩减增量再进行排序，待整个序列中的元素基本有序（增量足够小）时，
-  再对全体元素进行一次直接插入排序（增量为1）。其时间复杂度为O(n^3/2),要好于直接插入排序的O(n^2) */
+ 直接插入排序，然后依次缩减增量再进行排序，待整个序列中的元素基本有序（增量足够小）时，
+ 再对全体元素进行一次直接插入排序（增量为1）。其时间复杂度为O(n^3/2),要好于直接插入排序的O(n^2) */
 void ShellSort(int *arr, int N) {
     int i, j, increment;
     int tmp;
@@ -186,8 +186,7 @@ void merge_sort(int a[], int n) {
     if (tmp_array != NULL) {
         msort(a, tmp_array, 0, n - 1);
         free(tmp_array);
-    }
-    else
+    } else
         printf("No space for tmp array!\n");
 }
 
