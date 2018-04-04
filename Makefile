@@ -1,4 +1,5 @@
 BUILD := $(PWD)/build/
+BUILD := ./build/
 CXX ?= g++
 
 CFLAGS := -O3 -Wall -std=c++11
@@ -12,8 +13,9 @@ INCLUDE += -Isrc
 
 AFILES := test.cpp \
           sort.cpp
+AFILES := $(shell find . -name "*.cpp")
 
-AOBJS := $(addprefix $(BUILD),$(subst .cpp,.o,$(AFILES)))
+AOBJS := $(addprefix $(BUILD),$(subst ./,,$(subst .cpp,.o,$(AFILES))))
 
 APPS := $(basename $(AOBJS))
 
@@ -25,6 +27,12 @@ $(AOBJS): $(BUILD)%.o : %.cpp
 $(APPS): % : %.o
 	$(CXX) $^ -o $@ $(LIBFLAGS)
 
+SIMBOL := $(basename $(AFILES))
+
+.PHONY: $(SIMBOL)
+$(SIMBOL): ./% : ./build/%
+	$<
+
 .PHONY: $(basename $(AFILES))
 
 test: $(BUILD)test
@@ -35,4 +43,4 @@ sort: $(BUILD)sort
 
 .PHONY: clean
 clean:
-	rm -f $(BUILD)*
+	rm -rf $(BUILD)*
