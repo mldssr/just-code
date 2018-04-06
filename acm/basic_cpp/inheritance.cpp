@@ -13,7 +13,10 @@ public:
 
 class B: public A {
 public:
-    B(A& a) :
+    B() {
+        cout << "B with no para." << endl;
+    }
+    B(A &a) :
             _a(a) {
         cout << "B" << endl;
     }
@@ -30,4 +33,5 @@ int main(void) {
     A a;           // 很简单，定义a的时候调用了一次构造函数
     cout << "====================" << endl;
     B b(a);
+    cout << "====================" << endl;
 }

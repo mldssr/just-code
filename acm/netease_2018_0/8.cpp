@@ -13,10 +13,10 @@ int main() {
 
     int **state = new int *[n + 1];
     for (int i = 0; i < n + 1; i++) {
-        state[i] = new int[k + 1];
+        state[i] = new int[k + 1]();
     }
     state[0][1] = 1;
-    state[0][1] = 1;
+//    state[0][1] = 1;
 
     int mod = 1000000007;
 
