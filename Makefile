@@ -2,7 +2,8 @@ BUILD := $(PWD)/build/
 BUILD := ./build/
 CXX ?= g++
 
-CFLAGS := -O3 -Wall -std=c++11
+# No -O3
+CFLAGS := -Wall -std=c++11
 #INCLUDE := $(shell pkg-config --cflags glib-2.0 openssl zlib)
 #LIBFLAGS := $(shell pkg-config --libs glib-2.0 openssl zlib)
 
@@ -13,10 +14,14 @@ INCLUDE += -Isrc
 
 AFILES := test.cpp \
           sort.cpp
+
+# Example ./src/test.cpp
 AFILES := $(shell find . -name "*.cpp")
 
+# Example ./build/src/test.o
 AOBJS := $(addprefix $(BUILD),$(subst ./,,$(subst .cpp,.o,$(AFILES))))
 
+# Example ./build/src/test
 APPS := $(basename $(AOBJS))
 
 
@@ -27,6 +32,7 @@ $(AOBJS): $(BUILD)%.o : %.cpp
 $(APPS): % : %.o
 	$(CXX) $^ -o $@ $(LIBFLAGS)
 
+# Example ./src/test
 SIMBOL := $(basename $(AFILES))
 
 .PHONY: $(SIMBOL)

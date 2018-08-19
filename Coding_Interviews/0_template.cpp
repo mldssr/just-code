@@ -1,8 +1,5 @@
 /*
- * 1.cpp
- *
- *  Created on: 2018年4月28日
- *      Author: Lxx
+ * 
  */
 #include <bits/stdc++.h>
 //#include <stdio.h>
