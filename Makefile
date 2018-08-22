@@ -9,7 +9,7 @@ CFLAGS := -Wall -std=c++11
 
 # searching directory for .cpp and .h files.
 VPATH := src:test:acm:algorithm
-INCLUDE += -Isrc
+# INCLUDE += -Isrc
 #LIBFLAGS += -pthread
 
 AFILES := test.cpp \
