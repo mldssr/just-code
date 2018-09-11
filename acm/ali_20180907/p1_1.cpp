@@ -11,12 +11,12 @@
 #define DEBUG
 using namespace std;
 
-size_t len;
-unordered_multimap<size_t, pair<size_t, size_t>> uom;
-unsigned maxgrade = 0;
-list<int> wordset;
+size_t len; // 句子长度
+unordered_multimap<size_t, pair<size_t, size_t>> uom;   // <句子起始下标, <句子结束坐标(不包括), 单词ID>>
+unsigned maxgrade = 0;  // 最大得分
+list<int> wordset;  // 依次储存句子分词好后的各个单词的ID
 list<int> curwordset;
-vector<string> dict;
+vector<string> dict;    // 词典，下标构成单词ID
 unsigned tmp;
 
 void dfs(size_t index, unsigned grade) {

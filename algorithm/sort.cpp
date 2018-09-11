@@ -233,6 +233,7 @@ void HeapSort(int *arr, int N) {
 
 // 快排函数，ary为待排序数组，left为待排序的左边界，right为右边界
 static void q_sort(int arr[], int left, int right) {
+    printf("===================== q_sort(): index %d --- %d\n", left, right);
     if (left >= right)
         return;
     int key = arr[left];    // 取最左边的为基准数

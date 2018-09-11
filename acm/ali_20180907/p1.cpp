@@ -52,6 +52,7 @@ bool matched(string word) {
     return false;
 }
 
+// 返回 str 从 start 下标开始能匹配到的最大单词的长度
 int max_match(string str, int start) {
     int str_len = str.length();
     int left_len = str_len - start;

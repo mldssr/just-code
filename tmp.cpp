@@ -1,17 +1,23 @@
-/*
- * 构造与析构过程：
- * 对象的构造过程中，首先完成`父类`的构造函数，再完成`成员对象`的构造，最后调用`当前类`的构造函数
+/* 
+
  */
 
+// #include <bits/stdc++.h>
+#include <cstdlib>
+#include <cstdio>
+#include <cstring>
 #include <iostream>
+#include <algorithm>
 
 using namespace std;
 
-
+// typedef long long ll;
 
 int main() {
-    cout<<"=============="<<endl;
-    Man man;
-    cout<<"=============="<<endl;
+    int n;
+    scanf("%d", &n);
+
+    printf("%d \n", n);
+
     return 0;
 }
