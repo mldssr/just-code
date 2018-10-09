@@ -17,7 +17,7 @@ using namespace std;
 
 int main() {
 #ifdef REDIRECT
-    if (freopen("./tmp.in", "r", stdin) == NULL) {
+    if (freopen("./p3.in", "r", stdin) == NULL) {
        fprintf(stderr,"Error: %s\n", strerror(errno));
     }
 #endif
