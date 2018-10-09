@@ -5,6 +5,7 @@
 #include <iomanip>
 #include <iostream>
 #include <stack>
+#include <vector>
 using namespace std;
 
 // Binary Tree Node
@@ -211,6 +212,12 @@ void PostOrderWithoutRecursion2(BTNode *root) {
 
 // 统一的实现思路和代码风格的方法，完成对二叉树的三种非递归遍历。
 // 细节请参阅：https://www.jianshu.com/p/49c8cfd07410
+
+typedef struct node {
+    int val;
+    node *left;
+    node *right;
+} TreeNode;
 
 //更简单的非递归前序遍历
 void preorderTraversalNew(TreeNode *root, vector<int> &path) {

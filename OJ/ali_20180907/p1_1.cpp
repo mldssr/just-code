@@ -12,7 +12,8 @@
 using namespace std;
 
 size_t len; // 句子长度
-unordered_multimap<size_t, pair<size_t, size_t>> uom;   // <句子起始下标, <句子结束坐标(不包括), 单词ID>>
+// <句子起始下标, <句子结束坐标(不包括), 单词ID>>
+unordered_multimap<size_t, pair<size_t, size_t>> uom;
 unsigned maxgrade = 0;  // 最大得分
 list<int> wordset;  // 依次储存句子分词好后的各个单词的ID
 list<int> curwordset;
@@ -50,6 +51,7 @@ int main() {
         dict.push_back(tmp);
     }
 #ifdef DEBUG
+    cout << "================== Dictionary" << endl;
     for (auto &item : dict) {
         cout << item << endl;
     }
@@ -61,10 +63,12 @@ int main() {
         uom.insert(make_pair(index, make_pair(index + dict[i].length(), i)));
     }
 #ifdef DEBUG
+    cout << "================== uom" << endl;
     for (auto &item : uom) {
         cout << dict[item.second.second] << " " << item.first << " "
              << item.second.first << endl;
     }
+    cout << "================== End of uom" << endl;
 #endif
     dfs(0, 0);
     for (auto &item : wordset) {

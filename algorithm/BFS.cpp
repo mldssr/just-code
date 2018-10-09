@@ -1,5 +1,8 @@
 // https://blog.csdn.net/jnu_simba/article/details/8868235
 
+#include <queue>
+using namespace std;
+
 // 邻接矩阵
 typedef char VertexType; /* 顶点类型应由用户定义 */
 typedef int EdgeType;    /* 边上的权值类型应由用户定义 */
